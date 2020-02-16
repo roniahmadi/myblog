@@ -75,8 +75,9 @@
                 <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
             </div>
         @endauth
-
-        @yield('content')
+        @if(!Auth::check())
+            @yield('content')
+        @endif
     </div>
     <script type="text/javascript" src="./assets/scripts/main.js"></script>
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
